@@ -10,6 +10,8 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <!-- Material icon -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
 
     <body>
@@ -39,53 +41,7 @@
         </script>
 
         <div class="container">
-            <div class="row justify-content-center">
 
-                <form action="process.php" method="POST">
-                    <input type="hidden" name="id" value="<?php echo $id;?>">
-                    <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" name="name" value="<?php echo $name; ?>" placeholder="Enter your name">
-                    </div>
-                    <div class="form-group">
-                        <label>First Name</label>
-                        <input type="text" name="first_name" value="<?php echo $first_name; ?>"
-                            placeholder="Enter your location">
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" name="email" value="<?php echo $email; ?>"
-                            placeholder="Enter your location">
-                    </div>
-                    <div class="form-group">
-                        <label>Street</label>
-                        <input type="text" name="street" value="<?php echo $street; ?>"
-                            placeholder="Enter your location">
-                    </div>
-                    <div class="form-group">
-                        <label>Zip-Code</label>
-                        <input type="text" name="zip_code" value="<?php echo $zip_code; ?>"
-                            placeholder="Enter your location">
-                    </div>
-                    <div class="form-group">
-                        <label>City</label>
-                        <select name="city" id="city">
-                            <option value="seoul">Seoul</option>
-                            <option value="busan">Busan</option>
-                            <option value=incheon>Incheon</option>
-                            <option value="degu">Degu</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <?php 
-                            if($update == true): ?>
-                        <button type="submit" class="btn btn-info" name="update">Update</button>
-                        <?php else: ?>
-                        <button type="submit" class="btn btn-primary" name="save">Save</button>
-                        <?php endif; ?>
-                    </div>
-                </form>
-            </div>
 
             <!-- Data Table -->
             <?php 
@@ -130,7 +86,61 @@
             echo '</pre>';
         }
         ?>
+
+
+            <div class="row justify-content-center">
+                <form action="process.php" method="POST">
+                    <input type="hidden" name="id" value="<?php echo $id;?>">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="name" value="<?php echo $name; ?>" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" name="first_name" value="<?php echo $first_name; ?>"
+                            placeholder="Enter your location">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="email" value="<?php echo $email; ?>"
+                            placeholder="Enter your location">
+                    </div>
+                    <div class="form-group">
+                        <label>Street</label>
+                        <input type="text" name="street" value="<?php echo $street; ?>"
+                            placeholder="Enter your location">
+                    </div>
+                    <div class="form-group">
+                        <label>Zip-Code</label>
+                        <input type="text" name="zip_code" value="<?php echo $zip_code; ?>"
+                            placeholder="Enter your location">
+                    </div>
+                    <div class="form-group">
+                        <label>City</label>
+                        <select name="city" id="city">
+                            <option value="seoul">Seoul</option>
+                            <option value="busan">Busan</option>
+                            <option value=incheon>Incheon</option>
+                            <option value="degu">Degu</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <?php 
+                                     if($update == true): ?>
+
+                        <button type="submit" class="btn btn-info" name="update">Update</button>
+                        <?php else: ?>
+                        <button type="submit" class="btn btn-primary" name="save">Save</button>
+                        <?php endif; ?>
+                    </div>
+
+                </form>
+            </div>
+
+
         </div>
+
+
     </body>
 
 </html>
