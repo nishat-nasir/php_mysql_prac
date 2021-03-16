@@ -64,12 +64,24 @@
                     <?php 
                 while($row = $result->fetch_assoc()):?>
                     <tr>
-                        <td><?php echo $row['name']; ?></td>
-                        <td><?php echo $row['first_name']; ?></td>
-                        <td><?php echo $row['email']; ?></td>
-                        <td><?php echo $row['street']; ?></td>
-                        <td><?php echo $row['zip_code']; ?></td>
-                        <td><?php echo $row['city']; ?></td>
+                        <td>
+                            <?php echo $row['name']; ?>
+                        </td>
+                        <td>
+                            <?php echo $row['first_name']; ?>
+                        </td>
+                        <td>
+                            <?php echo $row['email']; ?>
+                        </td>
+                        <td>
+                            <?php echo $row['street']; ?>
+                        </td>
+                        <td>
+                            <?php echo $row['zip_code']; ?>
+                        </td>
+                        <td>
+                            <?php echo $row['city']; ?>
+                        </td>
                         <td>
                             <a href="index.php?edit=<?php echo $row['id'];?>" class="btn btn-info">Edit</a>
                             <a href="index.php?delete=<?php echo $row['id'];?>" class="btn btn-danger">Delete</a>
@@ -98,22 +110,20 @@
                     <div class="form-group">
                         <label>First Name</label>
                         <input type="text" name="first_name" value="<?php echo $first_name; ?>"
-                            placeholder="Enter your location">
+                            placeholder="Enter your First name">
                     </div>
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="email" name="email" value="<?php echo $email; ?>"
-                            placeholder="Enter your location">
+                        <input type="email" name="email" value="<?php echo $email; ?>" placeholder="Enter your Email">
                     </div>
                     <div class="form-group">
                         <label>Street</label>
-                        <input type="text" name="street" value="<?php echo $street; ?>"
-                            placeholder="Enter your location">
+                        <input type="text" name="street" value="<?php echo $street; ?>" placeholder="Enter Street name">
                     </div>
                     <div class="form-group">
                         <label>Zip-Code</label>
                         <input type="text" name="zip_code" value="<?php echo $zip_code; ?>"
-                            placeholder="Enter your location">
+                            placeholder="Enter your Zip Code">
                     </div>
                     <div class="form-group">
                         <label>City</label>
