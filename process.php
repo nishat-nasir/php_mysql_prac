@@ -1,7 +1,14 @@
 <?php
-define("DB_HOST", "192.168.219.159");
-"UPDATE mysql.user SET Password=PASSWORD('MyNewPass') WHERE User='root'";
+session_start();
 $mysqli = new mysqli('localhost', 'root','', 'crud') or die (mysqli_error($mysqli));
+
+$update = false;
+$name = "";
+$first_name = "";
+$email = "";
+$street = "";
+$zip_code = "";
+$city = "";
 
 if(isset($_POST['save'])){
     $name = $_POST['name'];
@@ -21,10 +28,26 @@ if(isset($_POST['save'])){
 
 if(isset($_GET['delete'])){
     $id = $_GET['delete'];
+      
     $mysqli->query("DELETE FROM data WHERE id=$id") or die ($mysqli->error);
 
     $_SESSION['message'] = "Record has been deleted";
     $_SESSION['msg_type'] = "danger";
     
     header("location:index.php");
+}
+
+
+if(isset($_GET['edit'])){
+    $update = true;
+    $id = $_GET['edit'];
+    $result = $mysqli->query("SELECT * FROM data WHERE id = $id") or die($mysql->error());
+    $row = $result->fetch_array();
+    $name = $row['name'];
+    $first_name = $row['first_name'];
+    $email = $row['email'];
+    $street = $row['street'];
+    $zip_code = $row['zip_code'];
+    $city = $row['city'];
+    
 }

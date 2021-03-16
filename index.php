@@ -44,23 +44,27 @@
                 <form action="process.php" method="POST">
                     <div class="form-group">
                         <label>Name</label>
-                        <input type="text" name="name" placeholder="Enter your name" value="">
+                        <input type="text" name="name" value="<?php echo $name; ?>" placeholder="Enter your name">
                     </div>
                     <div class="form-group">
                         <label>First Name</label>
-                        <input type="text" name="first_name" placeholder="Enter your location" value="">
+                        <input type="text" name="first_name" value="<?php echo $first_name; ?>"
+                            placeholder="Enter your location">
                     </div>
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="email" name="email" placeholder="Enter your location" value="">
+                        <input type="email" name="email" value="<?php echo $email; ?>"
+                            placeholder="Enter your location">
                     </div>
                     <div class="form-group">
                         <label>Street</label>
-                        <input type="text" name="street" placeholder="Enter your location" value="">
+                        <input type="text" name="street" value="<?php echo $street; ?>"
+                            placeholder="Enter your location">
                     </div>
                     <div class="form-group">
                         <label>Zip-Code</label>
-                        <input type="text" name="zip_code" placeholder="Enter your location" value="">
+                        <input type="text" name="zip_code" value="<?php echo $zip_code; ?>"
+                            placeholder="Enter your location">
                     </div>
                     <div class="form-group">
                         <label>City</label>
@@ -72,7 +76,12 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <button type="submit" name="save" class="btn btn-primary">Save</button>
+                        <?php 
+                    if($update == true): ?>
+                        <button type="submit" class="btn btn-info">Update</button>
+                        <?php else: ?>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <?php endif; ?>
                     </div>
                 </form>
             </div>
