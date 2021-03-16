@@ -42,6 +42,7 @@
             <div class="row justify-content-center">
 
                 <form action="process.php" method="POST">
+                    <input type="hidden" name="id" value="<?php echo $id;?>">
                     <div class="form-group">
                         <label>Name</label>
                         <input type="text" name="name" value="<?php echo $name; ?>" placeholder="Enter your name">
@@ -77,10 +78,10 @@
                     </div>
                     <div class="form-group">
                         <?php 
-                    if($update == true): ?>
-                        <button type="submit" class="btn btn-info">Update</button>
+                            if($update == true): ?>
+                        <button type="submit" class="btn btn-info" name="update">Update</button>
                         <?php else: ?>
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-primary" name="save">Save</button>
                         <?php endif; ?>
                     </div>
                 </form>
